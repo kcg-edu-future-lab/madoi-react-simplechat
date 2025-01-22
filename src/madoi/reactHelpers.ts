@@ -87,7 +87,6 @@ export function useMadoiState<T>(madoi: Madoi, initial: ValueOrFactory<T>): [T, 
       }
     }
     madoi.register(obj);
-    setState(getStateMethod.apply(obj));
   }, []);
 
   return [target.current?.getState() || initialValue.current,
@@ -141,7 +140,6 @@ export function useMadoiObject<T>(madoi: Madoi, obj: ValueOrFactory<T>, rerender
     }
     madoi.register(obj);
     registered.current = true;
-    setState(getStateMethod.apply(obj));
   }, []);
 
   return target.current;
