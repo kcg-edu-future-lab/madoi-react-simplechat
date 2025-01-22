@@ -4,10 +4,11 @@ import './index.css'
 import App from './App.tsx'
 import { Madoi } from './madoi/madoi.ts';
 
-console.log("main.tsx");
+const roomId = "madoiChat_2rnieg"; // 任意の文字列
+const apikey = "ahfuTep6ooDi7Oa4"; // apikey
 export const MadoiContext = createContext(new Madoi(
-    "wss://fungo.kcg.edu/madoi-20240628/rooms/madoiChat_2rnieg",
-    "Shei3z8cohg0quei"));
+  `ws://localhost:8080/madoi/rooms/${roomId}`,
+  apikey));
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
